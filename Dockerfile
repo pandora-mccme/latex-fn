@@ -7,6 +7,8 @@ RUN apt-get update && apt-get install -y \
 
 COPY --from=watchdog /fwatchdog /usr/bin/fwatchdog
 RUN chmod +x /usr/bin/fwatchdog
+COPY latex2pdf /usr/bin/latex2pdf
+RUN chmod +x /usr/bin/latex2pdf
 
 # Add non root user
 RUN adduser --system --group app

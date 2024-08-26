@@ -8,8 +8,8 @@ RUN apt-get update && apt-get install -y \
 
 COPY --from=watchdog /fwatchdog /usr/bin/fwatchdog
 RUN chmod +x /usr/bin/fwatchdog
-COPY mptosvg /usr/bin/mptosvg
-RUN chmod +x /usr/bin/mptosvg
+COPY bin/ /usr/local/bin
+RUN chmod +x /usr/local/bin/*
 
 # Add non root user
 RUN adduser --system --group app

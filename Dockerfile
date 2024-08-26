@@ -4,8 +4,7 @@ FROM ubuntu
 
 RUN apt-get update && apt-get install -y \
     unzip \
-    texlive \
-    texlive-metapost \
+    texlive-full \
     pdf2svg
 
 RUN mkdir -p /home/app

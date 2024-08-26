@@ -3,6 +3,7 @@ FROM ghcr.io/openfaas/classic-watchdog:0.3.1 AS watchdog
 FROM ubuntu
 
 RUN apt-get update && apt-get install -y \
+    texlive \
     texlive-metapost \
     pdf2svg
 

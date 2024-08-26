@@ -1,7 +1,7 @@
 provider:
   name: openfaas
 functions:
-  mptosvg1:
+  mptosvg:
     image: ghcr.io/pandora-mccme/latex-fn:main
     fprocess: "mptosvg"
     environment:

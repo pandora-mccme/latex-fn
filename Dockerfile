@@ -14,7 +14,7 @@ COPY bin/ /usr/local/bin
 RUN chmod +x /usr/local/bin/*
 
 # Add non root user
-RUN addgroup -S app && adduser app -S -G app
+RUN groupadd --system app && useradd app --system -g app
 RUN chown app /home/app
 
 WORKDIR /home/app

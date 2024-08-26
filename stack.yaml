@@ -2,7 +2,7 @@ provider:
   name: openfaas
 functions:
   mptosvg1:
-    image: ghcr.io/aeifn/latex-fn:main
+    image: ghcr.io/pandora-mccme/latex-fn:main
     fprocess: "mptosvg"
     environment:
       content_type: "application/octet-stream"
@@ -18,7 +18,7 @@ functions:
       memory: 20Mi
       requests: 100m
   latextopdf:
-    image: ghcr.io/aeifn/latex-fn:main
+    image: ghcr.io/pandora-mccme/latex-fn:main
     fprocess: "latextopdf"
     environment:
       content_type: "application/pdf"
@@ -34,7 +34,7 @@ functions:
       memory: 20Mi
       requests: 100m
   ziplatextopdf:
-    image: ghcr.io/aeifn/latex-fn:main
+    image: ghcr.io/pandora-mccme/latex-fn:main
     fprocess: "ziplatextopdf"
     environment:
       content_type: "application/pdf"

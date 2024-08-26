@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+set -euo pipefail
+
+cat > main.tex
+
+pdflatex main.tex > /dev/stderr
+
+cat main.pdf

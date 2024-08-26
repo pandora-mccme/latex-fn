@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+set -euo pipefail
+
+cat > main.zip
+unzip main.zip > /dev/stderr
+pdflatex main.tex > /dev/stderr
+cat main.pdf

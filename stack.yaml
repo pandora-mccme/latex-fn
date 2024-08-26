@@ -1,18 +1,20 @@
 provider:
   name: openfaas
 functions:
-  mptosvg:
-    image: ghcr.io/pandora-mccme/metapost-fn:main
-    fprocess: "mptosvg"
-    readonly_root_filesystem: true
+  latextopdf:
+    image: ghcr.io/aeifn/latex-fn:main
+    fprocess: "latextopdf"
     environment:
-      content_type: "application/octet-stream"
+      content_type: "application/pdf"
       exec_timeout: 3m
       read_timeout: 3m
       write_timeout: 3m
+    labels:
+      com.openfaas.ui.ext: "pdf"
     limits:
       memory: 128Mi
       cpu: 1000m
     requests:
       memory: 20Mi
       requests: 100m
+

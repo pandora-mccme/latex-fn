@@ -6,7 +6,11 @@ trap 'rm -rf "$WD"' EXIT
 WD=$(mktemp -d)
 cd "$WD"
 
-cat > main.zip
-unzip main.zip > /dev/stderr
-pdflatex main.tex > /dev/stderr
-cat main.pdf
+cat >main.zip
+if unzip main.zip >main.log &&
+    pdflatex main.tex >>main.log; then
+    cat main.pdf
+else
+    tee /dev/stderr <main.log
+    exit 1
+fi

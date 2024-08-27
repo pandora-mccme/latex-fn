@@ -6,6 +6,10 @@ trap 'rm -rf "$WD"' EXIT
 WD=$(mktemp -d)
 cd "$WD"
 
-cat > main.tex
-pdflatex main.tex > /dev/stderr
-cat main.pdf
+cat >main.tex
+if pdflatex main.tex >main.log; then
+    cat main.pdf
+else
+    tee /dev/stderr <main.log
+    exit 1
+fi

@@ -26,7 +26,6 @@ USER app
 ENV fprocess="pdflatex"
 # Set to true to see request in function logs
 ENV write_debug="false"
-ENV combine_output="false"
 
 EXPOSE 8080
 

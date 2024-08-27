@@ -7,10 +7,10 @@ WD=$(mktemp -d)
 cd "$WD"
 
 cat >main.zip
-if unzip main.zip >main.log &&
-    pdflatex main.tex >>main.log; then
+if unzip main.zip >main.log 2>&1 &&
+    pdflatex main.tex >>main.log 2>&1; then
     cat main.pdf
 else
-    tee /dev/stderr <main.log
+    cat main.log
     exit 1
 fi

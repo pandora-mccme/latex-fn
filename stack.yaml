@@ -21,7 +21,7 @@ functions:
     image: ghcr.io/pandora-mccme/latex-fn:main
     fprocess: "latextopdf"
     environment:
-      content_type: "application/pdf"
+      content_type: "application/octet-stream"
       exec_timeout: 3m
       read_timeout: 3m
       write_timeout: 3m
@@ -37,7 +37,7 @@ functions:
     image: ghcr.io/pandora-mccme/latex-fn:main
     fprocess: "ziplatextopdf"
     environment:
-      content_type: "application/pdf"
+      content_type: "application/octet-stream"
       exec_timeout: 3m
       read_timeout: 3m
       write_timeout: 3m

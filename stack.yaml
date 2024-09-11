@@ -5,6 +5,7 @@ functions:
     image: ghcr.io/pandora-mccme/latex-fn:main
     fprocess: "mptosvg"
     environment:
+      combine_output: false
       content_type: "application/octet-stream"
       exec_timeout: 3m
       read_timeout: 3m

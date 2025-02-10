@@ -50,9 +50,9 @@ functions:
     requests:
       memory: 20Mi
       requests: 100m
-  zip_xelatex:
+  zipxelatex:
     image: ghcr.io/pandora-mccme/latex-fn:main
-    fprocess: "zip_xelatex"
+    fprocess: "zipxelatex"
     environment:
       content_type: "application/octet-stream"
       exec_timeout: 3m

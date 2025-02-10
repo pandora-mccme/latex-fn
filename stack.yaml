@@ -50,3 +50,19 @@ functions:
     requests:
       memory: 20Mi
       requests: 100m
+  zip_xelatex:
+    image: ghcr.io/pandora-mccme/latex-fn:main
+    fprocess: "zip_xelatex"
+    environment:
+      content_type: "application/octet-stream"
+      exec_timeout: 3m
+      read_timeout: 3m
+      write_timeout: 3m
+    labels:
+      com.openfaas.ui.ext: "pdf"
+    limits:
+      memory: 128Mi
+      cpu: 1000m
+    requests:
+      memory: 20Mi
+      requests: 100m

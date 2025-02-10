@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+set -euo pipefail
+
+trap 'rm -rf "$WD"' EXIT
+
+WD=$(mktemp -d)
+cd "$WD"
+
+cat >main.zip
+if unzip main.zip >main.log 2>&1 &&
+  xelatex main.tex >>main.log 2>&1; then
+  cat main.pdf
+else
+  cat main.log
+  exit 1
+fi

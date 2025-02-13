@@ -60,9 +60,6 @@ functions:
       write_timeout: 3m
     labels:
       com.openfaas.ui.ext: "pdf"
-    limits:
-      memory: 128Mi
-      cpu: 1000m
     requests:
-      memory: 20Mi
-      requests: 100m
+      memory: 64Mi
+      requests: 200m

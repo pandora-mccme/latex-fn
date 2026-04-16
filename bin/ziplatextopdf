@@ -7,7 +7,7 @@ WD=$(mktemp -d)
 cd "$WD"
 
 cat >main.zip
-if unzip main.zip >main.log 2>&1 &&
+if LANG="ru_RU.UTF8" unzip main.zip >main.log 2>&1 &&
     pdflatex main.tex >>main.log 2>&1; then
     cat main.pdf
 else

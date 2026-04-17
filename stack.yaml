@@ -45,7 +45,7 @@ functions:
     labels:
       com.openfaas.ui.ext: "pdf"
     limits:
-      memory: 128Mi
+      memory: 256Mi
       cpu: 1000m
     requests:
       memory: 20Mi

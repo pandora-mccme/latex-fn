@@ -4,6 +4,7 @@ set -euo pipefail
 trap 'rm -rf "$WD"' EXIT
 
 WD=$(mktemp -d)
+LANG="ru_RU.UTF8"
 cd "$WD"
 
 cat >main.zip

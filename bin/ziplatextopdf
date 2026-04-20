@@ -4,7 +4,7 @@ set -euo pipefail
 trap 'rm -rf "$WD"' EXIT
 
 WD=$(mktemp -d)
-LANG="ru_RU.UTF8"
+export LANG="ru_RU.UTF8"
 cd "$WD"
 
 cat >main.zip
@@ -13,6 +13,6 @@ if [ -f main.pdf ];
 then
     cat main.pdf;
 else
-    cat main.log | egrep "(\.tex:|CLONE|CHAIN|HM)";
+    grep -E "(\.tex:|CLONE|CHAIN|HM)" main.log;
     exit 1;
 fi

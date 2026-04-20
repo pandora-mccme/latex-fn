@@ -8,7 +8,8 @@ export LANG="ru_RU.UTF8"
 cd "$WD"
 
 cat >main.zip
-7z x -y main.zip >main.log 2>&1 && pdflatex -file-line-error -interaction=nonstopmode main.tex >>main.log 2>&1
+7z x -y main.zip >main.log 2>&1
+pdflatex -file-line-error -interaction=nonstopmode main.tex >>main.log 2>&1 || true
 if [ -f main.pdf ];
 then
     cat main.pdf;

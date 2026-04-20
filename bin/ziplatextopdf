@@ -6,10 +6,12 @@ trap 'rm -rf "$WD"' EXIT
 WD=$(mktemp -d)
 LANG="ru_RU.UTF8"
 cd "$WD"
+rm -f main.pdf
 
 cat >main.zip
-if 7z x -y main.zip >main.log 2>&1 &&
-    pdflatex -file-line-error -interaction=nonstopmode main.tex >>main.log 2>&1; then
+7z x -y main.zip >main.log 2>&1 && pdflatex -file-line-error -interaction=nonstopmode main.tex >>main.log 2>&1;
+if [ -f main.pdf ]
+then
     cat main.pdf
 else
     cat main.log | egrep "(\.tex:|CLONE|CHAIN|HM)"
